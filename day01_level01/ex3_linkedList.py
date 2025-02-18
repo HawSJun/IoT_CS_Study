@@ -13,8 +13,8 @@
 
 class LinkedList:
     def __init__(self):
-        self.head = None  
-        self.nodes = []     
+        self.head = None
+        self.nodes = []
 
     class Node:
         def __init__(self, data):
@@ -31,9 +31,9 @@ class LinkedList:
             self.head = new_node  
             prevNode = None
         else:
-            self.nodes[-1].next = new_node  
-            prevNode = self.nodes[-1]
-        self.nodes.append(new_node)  
+            self.nodes[-1].next = new_node                  # self.nodes 라는 리스트에 append를 합니다. 
+            prevNode = self.nodes[-1]                       # 근데 append하기전에 self.nodes[-1].next 라는건
+        self.nodes.append(new_node)                         # 제일 최근에 들어온 노드를 선택해서 그놈의 next에 지금 만든 노드를 연결하겠다
         self.nodes[-1].prev = prevNode
     
     def insert(self,find_data,insert_data):
