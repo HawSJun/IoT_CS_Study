@@ -41,11 +41,13 @@
 class Cut_string:
 
     def __init__(self, string):
-        self.string = string
-        print("분노의 문자열 컷팅기 생성!")
+        self.string = string        # 전달받은 string 인자를 객체의 속성 self.string에 저장합니다.
+        print("분노의 문자열 컷팅기 생성!") # 객체가 생성될 때, 이 메시지를 출력하여 객체가 생성
 
     def cutting(self, n):
-        return [self.string[:n], self.string[n:]]
+        return [self.string[:n], self.string[n:]]   # [:n] 0번째 부터 n번까지 선택. [n:] n번부터 끝 문자까지
 
-cut = Cut_string('강황석준')
-print(cut.cutting(1))
+cut = Cut_string('강황석준') # Cut_string 클래스의 객체 cut을 생성
+                             #  객체가 생성되면, '강황석준'이라는 문자열이 생성자 __init__의 인자로 전달되어 self.string에 저장됩니다.
+print(cut.cutting(1))   # cut 객체의 cutting 메서드를 실행
+                        # cutting 메서드는 n=1을 받기 때문에, 문자열 '강황석준'을 1번째 인덱스에서 나누게 됩니다

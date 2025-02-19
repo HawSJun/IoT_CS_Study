@@ -72,23 +72,25 @@
 # print(f'{human.name}이 {human.hand}을 흔듭니다!')
 
 
-class People:
+class People:   # People 이라는 클래스를 정의
 
-    def __init__(self, name, hand, foot, eyes, body, face):
-        print('생성자가 실행되었습니다!')
-        self.name = name
+    def __init__(self, name, hand, foot, eyes, body, face): # 클래스의 생성자. 클래스의 객체가 생성될 때 호출
+        print('생성자가 실행되었습니다!')                   # name, hand, foot, eyes, body, face 매개변수를 받아 초기화
+        self.name = name    # name의 인자를 받아서 객체의 name 속성에 저장
         self.hand = hand
         self.foot = foot    
         self.eyes = eyes
         self.body = body
         self.face = face
 
-    def shake(self):
-        return f'{self.name}(가)이 {self.hand}를 흔듭니다!'
+    def shake(self):        # shake라는 멤버함수(메서드)를 정의
+        return f'{self.name}(가)이 {self.hand}를 흔듭니다!'     # shake 메서드가 호출되면
+                                                                # 객체의 이름과 손을 흔드는 동작을 문자열로 반환
 
-human = People('황석준', '손', '발', '눈', '몸', '얼굴')
-print(human.shake())
-
+human = People('황석준', '손', '발', '눈', '몸', '얼굴')       # People 클래스의 객체(human)를 생성
+                                                               # name, hand, foot, eyes, body, face 인자를 
+                                                               # 각각 '황석준', '손', '발', '눈', '몸', '얼굴' 로 설정
+print(human.shake()) # human.shake 메서드를 호출하여 동작을 실행
 
 class People:
     
@@ -103,6 +105,7 @@ class People:
 
     def __str__(self):
         return f'{self.name}(가)이 {self.hand}를 흔듭니다!'
-
+    # __str__ 메서드를 추가하면, 객체를 출력할 때 객체의 속성이나 원하는 형태로 사용자 정의 문자열을 출력할 수 있다.
+    # print(human) 같은 구문을 실행하면, human 객체는 자동으로 __str__() 메서드를 호출하여 반환된 값을 출력합니다.
 human = People('황석준', '손', '발', '눈', '몸', '얼굴')
 print(human)

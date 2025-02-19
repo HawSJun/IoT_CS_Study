@@ -65,13 +65,13 @@
 
 class Action:
     
-    def __init__(self, name, play, coding, car):
-        self.name = name
+    def __init__(self, name, play, coding, car):    # 클래스 생성자. name, play, coding, car 생성자에 전달되는 인자
+        self.name = name  # 객체 속성 name에 name 인자의 값을 할당합니다.
         self.play = play
         self.coding = coding
         self.car = car
 
-    def action(self):
+    def action(self):       # action 이라는 메서드 정의
         print(f'{self.name}이가 {self.play}를 하고 있습니다!')
 
     def study(self):
@@ -80,7 +80,7 @@ class Action:
     def mycar(self):
         print(f'{self.name}이가 {self.car}을(를) 타고 있습니다!')
 
-myAction = Action('석준', '테니스', 'Python', 'Morning')
-myAction.action()
+myAction = Action('석준', '테니스', 'Python', 'Morning')    # Action 클래스의 객체 myAction을 생성. 객체 생성 시 해당 값을 인자로 전달 속성에 저장
+myAction.action() # 여기가 호출되면 위의 action 메서드가 호출.  myAction 객체의 action 메서드를 호출
 myAction.study()
 myAction.mycar()
