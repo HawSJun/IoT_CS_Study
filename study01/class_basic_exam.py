@@ -20,14 +20,32 @@
 """
 
 
-
-
-
-
-
-
-
 # 위에 클래스를 생성해서 , 아래 코드의 에러 메세지를 없애주세요 ~
-cut = cut_string('강황석준')
+
+# class cut_string:
+
+#     def __init__(self, name):
+#         self.name = name
+    
+#     def cutting(self):
+#         return f'분노의 {self.name}'
+
+
+# cut = cut_string('강황석준')
+# print(cut.cutting(1))
+# # 출력 ['강','황석준']
+
+
+
+
+class Cut_string:
+
+    def __init__(self, string):
+        self.string = string
+        print("분노의 문자열 컷팅기 생성!")
+
+    def cutting(self, n):
+        return [self.string[:n], self.string[n:]]
+
+cut = Cut_string('강황석준')
 print(cut.cutting(1))
-# 출력 ['강','황석준']

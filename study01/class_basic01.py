@@ -72,7 +72,7 @@
 # print(f'{human.name}이 {human.hand}을 흔듭니다!')
 
 
-class people:
+class People:
 
     def __init__(self, name, hand, foot, eyes, body, face):
         print('생성자가 실행되었습니다!')
@@ -86,5 +86,23 @@ class people:
     def shake(self):
         return f'{self.name}(가)이 {self.hand}를 흔듭니다!'
 
-human = people('황석준', '손', '발', '눈', '몸', '얼굴')
+human = People('황석준', '손', '발', '눈', '몸', '얼굴')
 print(human.shake())
+
+
+class People:
+    
+    def __init__(self, name, hand, foot, eyes, body, face):
+        print('생성자가 실행되었습니다!')
+        self.name = name
+        self.hand = hand
+        self.foot = foot    
+        self.eyes = eyes
+        self.body = body
+        self.face = face
+
+    def __str__(self):
+        return f'{self.name}(가)이 {self.hand}를 흔듭니다!'
+
+human = People('황석준', '손', '발', '눈', '몸', '얼굴')
+print(human)

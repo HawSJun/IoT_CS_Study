@@ -4,33 +4,33 @@
 
 # 형우는 옛날에 계산기를 만들다가 빠르게 때려치웠다.
 # 그 유산인 calc_ver01 클래스를 발견하고, 계산기의 남은 기능들을 구현해보려고한다.
-class calc_ver01():
-    def __init__(self):
-        self.accum = 0
+# class calc_ver01():
+#     def __init__(self):
+#         self.accum = 0
 
-    def add(self,a):
-        self.accum += a
-        return self.accum
+#     def add(self,a):
+#         self.accum += a
+#         return self.accum
     
 # 클래스명(클래스명) 으로 상속받을 수 있다.
-class calc_ver02(calc_ver01):
-    def __init__(self):
-        super().__init__()  # 부모 클래스의 생성자를 실행한다. 즉 calc_ver01 의 init 을 실행한다
+# class calc_ver02(calc_ver01):
+#     def __init__(self):
+#         super().__init__()  # 부모 클래스의 생성자를 실행한다. 즉 calc_ver01 의 init 을 실행한다
                             # 생성자를 호출하는 이유 : 부모클래스의 멤버변수를 사용하려고, 호출하지않아도 메서드(함수)는 사용이 가능하다.
 
-    def sub(self,a):
-        self.accum -= a
-        return self.accum
+    # def sub(self,a):
+    #     self.accum -= a
+    #     return self.accum
     
 # 제대로 되었나 확인해보자.
 
-dongkwan_calc = calc_ver01()
-print(dongkwan_calc.add(3))  # 3
+# dongkwan_calc = calc_ver01()
+# print(dongkwan_calc.add(3))  # 3
 # calc.sub(3)  : 에러 , why? ver01에는 구현되지 않음
 
-hyungwoo_calc = calc_ver02()
-print(hyungwoo_calc.add(4))  # 4
-print(hyungwoo_calc.sub(3))  # 1
+# hyungwoo_calc = calc_ver02()
+# print(hyungwoo_calc.add(4))  # 4
+# print(hyungwoo_calc.sub(3))  # 1
 # ver01을 사용한 동관의 계산기는 sub기능이 동작하지 않지만, 최신버전을 가진 형우의 계산기는 이전버전의 add와 최신버전의 sub 기능 둘다 사용이 가능하다.
 
 
@@ -73,3 +73,33 @@ new_calc.redo()             # 에러 , 예외처리 요망 ('redo 할 기록이 
 tip) 계산 히스토리를 기록할 수 있다면?
 제약조건은 없습니다. 기능 구현에 머리를 써주세요.
 """
+
+class calc_ver01():
+    def __init__(self):
+        self.accum = 0
+
+    def add(self,a):
+        self.accum += a
+        return self.accum
+    
+class calc_ver02(calc_ver01):
+    def __init__(self):
+        super().__init__()  # 부모 클래스의 생성자를 실행한다. 즉 calc_ver01 의 init 을 실행한다
+                            # 생성자를 호출하는 이유 : 부모클래스의 멤버변수를 사용하려고, 호출하지않아도 메서드(함수)는 사용이 가능하다.
+    def sub(self,a):
+        self.accum -= a
+        return self.accum
+
+class calc_ver03(calc_ver02):
+    def __init__(self):
+        super().__init__()
+
+    
+dongkwan_calc = calc_ver01()
+print(dongkwan_calc.add(3))  # 3
+# calc.sub(3)  : 에러 , why? ver01에는 구현되지 않음
+
+hyungwoo_calc = calc_ver02()
+print(hyungwoo_calc.add(4))  # 4
+print(hyungwoo_calc.sub(3))  # 1
+
