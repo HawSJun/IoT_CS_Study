@@ -143,7 +143,7 @@ class calc_ver02(calc_ver01):
 class calc_ver03(calc_ver02):
     def __init__(self, n):
         super().__init__()
-        self.n = n
+        self.accum = n
         
     def mul(self, a):
         self.accum *= a
