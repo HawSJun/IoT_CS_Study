@@ -141,7 +141,7 @@ class calc_ver02(calc_ver01):
         return self.accum
 
 class calc_ver03(calc_ver02):
-    def __init__(self, n):
+    def __init__(self, n = 0):
         super().__init__()
         self.accum = n
         
@@ -175,7 +175,7 @@ class calc_ver03(calc_ver02):
 
 
 if __name__ == "__main__":     # 여기 코드 실행 에러남 calc_ver03 init에 매개변수 넣으면 실행은 되는데 값은 출력이안됨!!
-    new_calc = calc_ver03(5)    # 5
+    new_calc = calc_ver03()    # 5
 #     new_calc.undo()             # 에러 , 예외처리 요망 ('undo 할 기록이 없습니다' 출력)
     new_calc.add(3)             # 8
     new_calc.div(2)             # 4
