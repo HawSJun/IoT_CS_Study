@@ -115,11 +115,6 @@ tip) 계산 히스토리를 기록할 수 있다면?
 # print(hyungwoo_calc.sub(3))  # 1
 
 
-# seokjun_clac = calc_ver03()
-# print(seokjun_clac.mul(3))
-# print(seokjun_clac.div(3))
-
-
 # new_calc = calc_ver03(5)    # 5
 # new_calc.undo()             # 에러 , 예외처리 요망 ('undo 할 기록이 없습니다' 출력)
 # new_calc.add(3)             # 8
@@ -148,8 +143,8 @@ class calc_ver02(calc_ver01):
 class calc_ver03(calc_ver02):
     def __init__(self, n):
         super().__init__()
-        self.accum = n
-
+        self.n = n
+        
     def mul(self, a):
         self.accum *= a
         return self.accum
@@ -162,19 +157,28 @@ class calc_ver03(calc_ver02):
         return f'{self.accum}'
 
 
-dongkwan_calc = calc_ver01()
-print(dongkwan_calc.add(3))  # 3
-# calc.sub(3)  : 에러 , why? ver01에는 구현되지 않음
+# dongkwan_calc = calc_ver01()
+# print(dongkwan_calc.add(3))  # 3
+# # calc.sub(3)  : 에러 , why? ver01에는 구현되지 않음
 
-hyungwoo_calc = calc_ver02()
-print(hyungwoo_calc.add(4))  # 4
-print(hyungwoo_calc.sub(3))  # 1
+# hyungwoo_calc = calc_ver02()
+# print(hyungwoo_calc.add(4))  # 4
+# print(hyungwoo_calc.sub(3))  # 1
 
 
-new_calc = calc_ver03()
+# new_calc = calc_ver03()  # 여기 코드는 ver03 init에 매개변수 안넣으면 출력
+# print(new_calc.add(3))
+# print(new_calc.sub(2))
 # print(new_calc.mul(3))
 # print(new_calc.div(3))
-print(new_calc.add(3))
-print(new_calc.add(2))
+# print(new_calc) 
 
-print(new_calc) 
+
+if __name__ == "__main__":     # 여기 코드 실행 에러남 calc_ver03 init에 매개변수 넣으면 실행은 되는데 값은 출력이안됨!!
+    new_calc = calc_ver03(5)    # 5
+#     new_calc.undo()             # 에러 , 예외처리 요망 ('undo 할 기록이 없습니다' 출력)
+    new_calc.add(3)             # 8
+    new_calc.div(2)             # 4
+#     ew_calc.undo()             # 8
+#     new_calc.redo()             # 4
+#     new_calc.redo()             # 에러 , 예외처리 요망 ('redo 할 기록이 없습니다' 출력)
