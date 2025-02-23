@@ -24,7 +24,9 @@ r_str2 = 'graph'
 
 d_str3 = ['c','c','c','a','b','e','c']
 r_str3 = 'ace'
+
 def solution(r_str, d_str):
+    
     return
 
 
