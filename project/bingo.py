@@ -31,9 +31,9 @@ def bingo():
         # 빙고보드안에 있는 숫자인지 판단
         if playerPick in memo:
             bingoState[playerPick] = True
-            print(f'{playerPick} 색칠 완료')
+            print(f'{playerPick} 색칠 완료\n')
         else:
-            print('빙고보드에 없는 숫자임 ㅋ')
+            print('빙고보드에 없는 숫자임 ㅋ\n')
         
         for i in bingoBoard:
             for j in i:
@@ -43,8 +43,8 @@ def bingo():
             print()
             print()
 
-        ## 스코어 어떻게 체크하지? , 로직 개선해야됨 
-        ## 1. 탐색 , 2. 스코어 올라가는 로직
+        # 스코어 어떻게 체크하지? , 로직 개선해야됨 
+        # 1. 탐색 , 2. 스코어 올라가는 로직
         # 가로 
         if bingoState[memo[0]] and bingoState[memo[1]] and bingoState[memo[2]] and bingoState[memo[3]]:
             score += 1
@@ -74,10 +74,3 @@ def bingo():
         if score == 3:
             print('게임 클리어!')
             break
-        
-        
-        
-
-
-
-
